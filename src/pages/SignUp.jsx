@@ -69,8 +69,12 @@ const SignUp = () => {
   return (
     <>
       <Navbar />
-      <div className='flex items-center justify-center mt-28'>
-        <div className='w-96 border rounded-md bg-white px-7 py-10 shadow-lg'>
+      <div className='flex flex-col items-center justify-center mt-20'>
+      <div className='mb-14'>
+        <h1 className='text-xl md:text-3xl font-bold'>Welcome to Note<span className='text-green-500'>Me</span> App</h1>
+        <p className='text-sm md:text-lg text-center text-blue-500'>Signup to create your daily notes.</p>
+        </div>
+        <div className='w-80 md:w-96 border rounded-md bg-white px-7 py-10 shadow-lg'>
           <form onSubmit={handleSignUp}>
             <h4 className="text-2xl mb-7 text-center">SignUp</h4>
 
@@ -101,7 +105,7 @@ const SignUp = () => {
             <button type='submit' className='bg-blue-500 hover:bg-blue-600 w-full py-2 text-white text-sm rounded '>Create Account</button>
             <p className='text-sm text-center mt-4'>
               Already registered? {" "}
-              <Link to='/login' className='text-blue-500 underline'>
+              <Link to='/' className='text-blue-500 underline'>
                 Login
               </Link>
             </p>

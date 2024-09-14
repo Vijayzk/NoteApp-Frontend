@@ -3,7 +3,7 @@ import ProfileInfo from './ProfileInfo'
 import { useNavigate } from 'react-router-dom'
 import SearchBar from './SearchBar'
 
-const Navbar = ({userInfo , onSearchNote ,handleClearSearch}) => {
+const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
 
     const [searchQuery, setSearchQuery] = useState("")
     const navigate = useNavigate()
@@ -14,9 +14,9 @@ const Navbar = ({userInfo , onSearchNote ,handleClearSearch}) => {
     };
 
     const handleSearch = () => {
-       if(searchQuery){
-        onSearchNote(searchQuery)
-       }
+        if (searchQuery) {
+            onSearchNote(searchQuery)
+        }
     };
 
     const onClearSearch = () => {
@@ -27,18 +27,21 @@ const Navbar = ({userInfo , onSearchNote ,handleClearSearch}) => {
     return (
         <>
             <div className="bg-white flex items-center justify-between px-6 py-2 drop-shadow">
-                <div className='flex space-x-1'>
+                <div className='flex flex-row'>
                     <img src="logo.avif" alt="" className='h-10 w-10' />
-                    <h2 className='text-lg md:text-xl font-semibold text-black py-2'>NotesApp</h2>
+                    <h2 className='text-xl font-semibold text-black py-1 md:py-2 mt-1 md:mt-0'>Note<span className='text-green-500'>Me</span></h2>
                 </div>
-                <SearchBar
-                    value={searchQuery}
-                    onChange={({ target }) => {
-                        setSearchQuery(target.value)
-                    }}
-                    handleSearch={handleSearch}
-                    onClearSearch={onClearSearch}
-                />
+                {
+                    userInfo &&
+                    <SearchBar
+                        value={searchQuery}
+                        onChange={({ target }) => {
+                            setSearchQuery(target.value)
+                        }}
+                        handleSearch={handleSearch}
+                        onClearSearch={onClearSearch}
+                    />
+                }
                 {
                     userInfo &&
                     <ProfileInfo userInfo={userInfo} onLogout={onLogout} />

@@ -180,7 +180,7 @@ const Home = () => {
         }}
         contentLabel=''
         ariaHideApp={false}
-        className='w-[40%] max-h-3/4 bg-white rounded-md mx-auto mt-14 p-5'
+        className='w-80 md:w-[40%] max-h-3/4 bg-white rounded-md mx-auto mt-28 md:mt-14 p-5'
       >
         <AddEditNotes
           type={openAddEditModal.type}
